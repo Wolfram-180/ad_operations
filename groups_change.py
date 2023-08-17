@@ -1,4 +1,6 @@
-# script runs through list of emails
+# PURPOSE: delete user from group and add user to another group
+
+# APPROACH: script runs through list of emails
 # find user by email
 # moving users from All to Separated
 
