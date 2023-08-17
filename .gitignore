@@ -1,3 +1,5 @@
 secure_data.py
 user_data_report.xlsx
 ~*
+_*/
+__pycache__/
