@@ -27,10 +27,13 @@ for user_email in secure_data.users_list_change_homefolder:
     if len(conn.entries) > 0:
         user_cn = conn.entries[0].distinguishedName.value
 
-        conn.modify(user_cn, {'homeDrive': (ldap3.MODIFY_REPLACE, 'c:')})
-        conn.modify(user_cn, {'homeDirectory': (ldap3.MODIFY_REPLACE, 'temp')})
+        try:
+            conn.modify(user_cn, {'homeDrive': (ldap3.MODIFY_REPLACE, 'c:')})
+            conn.modify(user_cn, {'homeDirectory': (ldap3.MODIFY_REPLACE, 'temp')})
+            print(user_cn, ' changed')
+        except:
+            print(user_cn, ' error on change')
 
-        print(user_cn, ' changed')
     else:
         print(user_email, ' not found')
 
